@@ -20,7 +20,7 @@ public class TagContentExtractor {
                 matchFound = true;
             }
             if(!matchFound) {
-                System.out.println("none");
+                System.out.println("None");
             }
 			
 			testCases--;

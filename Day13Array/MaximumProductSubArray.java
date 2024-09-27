@@ -1,0 +1,22 @@
+package Day13Array;
+
+public class MaximumProductSubArray {
+    public static int maxProarraySum(int[] arr) {
+        int res = arr[0];
+        int maxEnding = arr[0];
+
+        // Find the maximum sum ending at index i by either extending 
+        // the maximum sum subarray ending at index i - 1 or by
+        // starting a new subarray from index i
+        for (int i = 0; i < arr.length; i++) {
+            maxEnding = Math.max(maxEnding * arr[i], arr[i]);
+            // Update res if maximum subarray sum ending at index i > res
+            res = Math.max(res,maxEnding);
+        }
+        return res;
+    }
+    public static void main(String[] args) {
+        int[] arr = {2, 3, -8, 7, -1, 2, 3};
+        System.out.println(maxProarraySum(arr));
+    }
+}
